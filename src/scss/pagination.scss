@@ -1,0 +1,44 @@
+$wp-spacing-small: var(--wp--preset--spacing--small, 1em);
+$wp-spacing-xx-small: var(--wp--preset--spacing--xx-small, 5px);
+$wp-color-neutral-300: var(--wp--preset--color--neutral-300, #ddd);
+$wp-color-neutral-100: var(--wp--preset--color--neutral-100, #f9f9f9);
+$wp-color-neutral-900: var(--wp--preset--color--neutral-900, #333);
+$wp-color-neutral-0: var(--wp--preset--color--neutral-0, #fff);
+$wp-color-primary: var(--wp--preset--color--primary, #007cba);
+$wp-border-radius-small: var(--wp--preset--border-radius--small, 3px);
+$wp-padding-xx-small: var(--wp--preset--spacing--xx-small, 8px);
+$wp-padding-small: var(--wp--preset--spacing--small, 12px);
+
+.wp-pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: $wp-spacing-small 0;
+
+    .pagination-item {
+        margin: 0 $wp-spacing-xx-small;
+    }
+
+    .pagination-button {
+        display: inline-block;
+        padding: $wp-padding-xx-small $wp-padding-small;
+        text-decoration: none;
+        border: 1px solid $wp-color-neutral-300;
+        border-radius: $wp-border-radius-small;
+        background-color: $wp-color-neutral-100;
+        color: $wp-color-neutral-900;
+        cursor: pointer;
+
+        &.current {
+            background-color: $wp-color-primary;
+            color: $wp-color-neutral-0;
+            border-color: $wp-color-primary;
+            font-weight: bold;
+        }
+
+        &[aria-disabled="true"] {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "feedback-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build && npm run build:css",
+    "start": "wp-scripts start & npm run watch:css",
+    "build:css": "sass src/style.scss build/style.css --no-source-map && postcss build/style.css --use autoprefixer -o build/style.css",
+    "watch:css": "sass src/style.scss build/style.css --watch --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.25.9",
+    "@wordpress/scripts": "^30.9.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.83.4"
+  },
+  "dependencies": {
+    "@wordpress/i18n": "^5.17.0"
+  }
+}

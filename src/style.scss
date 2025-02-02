@@ -1,0 +1,28 @@
+@use './scss/pagination.scss' as *;
+
+.feedback-form {
+    box-sizing: border-box;
+
+    label {
+        display: block;
+        margin-bottom: .25em;
+        font-size: var(--wp--preset--font-size--small);
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: .5em;
+        margin-bottom: .5em;
+        font-size: var(--wp--preset--font-size--normal);
+    }
+}
+
+.entry-details {
+    margin-bottom: 1em;
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.entry-detail-link {
+    cursor: pointer;
+}
