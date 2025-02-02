@@ -100,7 +100,6 @@ function feedback_plugin_enqueue_scripts() {
         );
     }
 
-        // Enqueue on frontend for all users
     if (!is_admin()) {
         wp_enqueue_script(
             'feedback-entries-render',

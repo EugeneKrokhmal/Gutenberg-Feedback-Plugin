@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (data.success) {
                 renderEntries(data.data.entries, data.data.totalPages, page);
             } else {
-                showAlert(data.message || wp.i18n.__("Failed to load entries.", "feedback-plugin"));
+                showAlert(data.message || __("Failed to load entries.", "feedback-plugin"));
             }
         } catch (error) {
-            handleError(wp.i18n.__("Error fetching entries.", "feedback-plugin"), error);
+            handleError(__("Error fetching entries.", "feedback-plugin"), error);
         }
     }
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearContent([entriesList, pagination, detailsContainer]);
 
         if (!entries.length) {
-            entriesList.innerHTML = `<p>${wp.i18n.__("No entries found.", "feedback-plugin")}</p>`;
+            entriesList.innerHTML = `<p>${__("No entries found.", "feedback-plugin")}</p>`;
             return;
         }
 
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 1; i <= totalPages; i++) {
             const pageButton = createLink(
                 i,
-                `pagination-button wp-block-buttonwp.i18n.__link wp-element-button ${i === currentPage ? 'active' : ''}`,
+                `pagination-button wp-block-button__link wp-element-button ${i === currentPage ? 'active' : ''}`,
                 { page: i },
                 i === currentPage
             );
@@ -96,33 +96,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 const { first_name, last_name, email, message, subject } = data.data.entry;
 
                 detailsContainer.innerHTML = `
-                <h3>${wp.i18n.__("Entry Details", "feedback-plugin")}</h3>
+                <h3>${__("Entry Details", "feedback-plugin")}</h3>
                 <table class="entry-details">
                     <tbody>
                         <tr>
-                            <th align="left">${wp.i18n.__("Name:", "feedback-plugin")}</th>
+                            <th align="left">${__("Name:", "feedback-plugin")}</th>
                             <td>${first_name} ${last_name}</td>
                         </tr>
                         <tr>
-                            <th align="left">${wp.i18n.__("Email:", "feedback-plugin")}</th>
+                            <th align="left">${__("Email:", "feedback-plugin")}</th>
                             <td>${email}</td>
                         </tr>
                         <tr>
-                            <th align="left">${wp.i18n.__("Subject:", "feedback-plugin")}</th>
+                            <th align="left">${__("Subject:", "feedback-plugin")}</th>
                             <td>${subject}</td>
                         </tr>
                         <tr>
-                            <th align="left">${wp.i18n.__("Message:", "feedback-plugin")}</th>
+                            <th align="left">${__("Message:", "feedback-plugin")}</th>
                             <td>${message}</td>
                         </tr>
                     </tbody>
                 </table>
             `;
             } else {
-                showAlert(data.message || wp.i18n.__("Failed to load entry details.", "feedback-plugin"));
+                showAlert(data.message || __("Failed to load entry details.", "feedback-plugin"));
             }
         } catch (error) {
-            handleError(wp.i18n.__("Error fetching entry details.", "feedback-plugin"), error);
+            handleError(__("Error fetching entry details.", "feedback-plugin"), error);
         }
     }
 

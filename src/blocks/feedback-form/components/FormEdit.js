@@ -43,7 +43,7 @@ const FormEdit = ({ attributes }) => {
                     id="firstName"
                     name="firstName"
                     required={attributes.isFirstNameRequired}
-                    aria-required={attributes.isFirstNameRequired ? "true" : "false"}
+                    aria-required={attributes.isFirstNameRequired}
                     aria-labelledby="firstName-label"
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
@@ -73,7 +73,7 @@ const FormEdit = ({ attributes }) => {
                     name="email"
                     required={attributes.isEmailRequired}
                     value={formData.email}
-                    aria-required={attributes.isEmailRequired ? "true" : "false"}
+                    aria-required={attributes.isEmailRequired}
                     aria-labelledby="email"
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
@@ -89,7 +89,7 @@ const FormEdit = ({ attributes }) => {
                     id="subject"
                     name="subject"
                     required={attributes.isSubjectRequired}
-                    aria-required={attributes.isSubjectRequired ? "true" : "false"}
+                    aria-required={attributes.isSubjectRequired}
                     aria-labelledby="subject"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -106,7 +106,7 @@ const FormEdit = ({ attributes }) => {
                     name="message"
                     rows="5"
                     required={attributes.isMessageRequired}
-                    aria-required={attributes.isMessageRequired ? "true" : "false"}
+                    aria-required={attributes.isMessageRequired}
                     aria-labelledby="message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
