@@ -138,7 +138,6 @@ function feedback_plugin_add_user_fields_to_rest_api($response, $user, $request)
 }
 add_filter('rest_prepare_user', 'feedback_plugin_add_user_fields_to_rest_api', 10, 3);
 
-
 function feedback_plugin_enqueue_admin_scripts() {
     if (current_user_can('administrator')) {
         wp_enqueue_script(
